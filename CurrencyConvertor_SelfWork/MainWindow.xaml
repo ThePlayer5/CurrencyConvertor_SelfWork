@@ -1,0 +1,77 @@
+﻿<Window x:Class="CurrencyConvertor_SelfWork.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CurrencyConvertor_SelfWork"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Icon="/Images/valuta.ico">
+    <Grid Background="DimGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="2"
+                 Grid.ColumnSpan="3"
+                 FontSize="28"
+                 x:Name="Input"
+                 TextChanged="Input_TextChanged"/>
+        <TextBox Grid.Row="2"
+                 Grid.Column="4"
+                 Grid.ColumnSpan="3"
+                 FontSize="28"
+                 x:Name="Output"
+                 TextChanged="Output_TextChanged"/>
+        <ComboBox Grid.Row="2"
+                  Grid.Column="3"
+                  FontSize="28"
+                  x:Name="Convertor"
+                  SelectionChanged="Convertor_SelectionChanged">
+            <ComboBoxItem Content="USD"
+                          FontSize="18"
+                          IsSelected="True"/>
+            <ComboBoxItem Content="EUR"
+                          FontSize="18"/>
+            <ComboBoxItem Content="CNY"
+                          FontSize="18"/>
+        </ComboBox>
+        <Button Grid.Row="1"
+                Grid.Column="2"
+                Grid.ColumnSpan="3"
+                Margin="50 0"
+                FontSize="28"
+                Content="Конвертировать"
+                Click="Button_Click"/>
+        <TextBlock Grid.Row="3"
+                   Grid.Column="1"
+                   Foreground="White"
+                   Background="Black"
+                   Text="Рубль"
+                   FontSize="28"
+                   Padding="20 0"/>
+        <TextBlock Grid.Row="3"
+                 Grid.Column="5"
+                 Padding="10 0"
+                 FontSize="28"
+                 Background="Black"
+                 Foreground="White"
+                 x:Name="Currency"
+                 Text="Валюта"/>
+
+    </Grid>
+</Window>
