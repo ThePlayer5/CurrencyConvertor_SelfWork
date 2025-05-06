@@ -49,6 +49,26 @@ namespace CurrencyConvertor_SelfWork
             }
         }
 
+        private void CurrencyTitleChanged()
+        {
+            if (!string.IsNullOrEmpty(Currency.Text))
+            {
+                var selectedCurrency = (Convertor.SelectedItem as ComboBoxItem)?.Content.ToString();
+                switch (selectedCurrency)
+                {
+                    case "USD":
+                        Currency.Text = "Доллар США";
+                        break;
+                    case "EUR":
+                        Currency.Text = "Евро";
+                        break;
+                    case "CNY":
+                        Currency.Text = "Китайский юань";
+                        break;
+                }
+            }
+        }
+
         private void Convertor_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Transfer();
@@ -57,16 +77,19 @@ namespace CurrencyConvertor_SelfWork
         private void Input_TextChanged(object sender, TextChangedEventArgs e)
         {
             Transfer();
+            CurrencyTitleChanged();
         }
 
         private void Output_TextChanged(object sender, TextChangedEventArgs e)
         {
             Transfer();
+            CurrencyTitleChanged();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Transfer();
+            CurrencyTitleChanged();
         }
     }
 }

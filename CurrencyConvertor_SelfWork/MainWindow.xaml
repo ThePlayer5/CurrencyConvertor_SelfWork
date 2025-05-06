@@ -64,14 +64,16 @@
                    Text="Рубль"
                    FontSize="28"
                    Padding="20 0"/>
-        <TextBlock Grid.Row="3"
-                 Grid.Column="5"
-                 Padding="10 0"
+        <TextBox Grid.Row="3"
+                 Grid.Column="4"
+                 Grid.ColumnSpan="3"
+                 Margin="30 0"
+                 HorizontalContentAlignment="Center"
                  FontSize="28"
                  Background="Black"
                  Foreground="White"
                  x:Name="Currency"
-                 Text="Валюта"/>
+                 Text="Доллар США"/>
 
     </Grid>
 </Window>
